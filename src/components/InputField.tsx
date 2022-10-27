@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import styles from "./InputField.module.css";
 
 interface InputFieldProps {
@@ -8,14 +8,17 @@ interface InputFieldProps {
 }
 
 const InputField = ({ todoText, setTodoText, handleAdd }: InputFieldProps) => {
-	const inputRef = useRef<HTMLInputElement>(null);
+	const inputRef = useRef<any>(null);
+
+	useEffect(() => {
+		inputRef.current.focus();
+	}, []);
 
 	return (
 		<form
 			className={styles.wrapper}
 			onSubmit={(e) => {
 				handleAdd(e);
-				inputRef.current?.blur();
 			}}
 		>
 			<input
@@ -25,6 +28,7 @@ const InputField = ({ todoText, setTodoText, handleAdd }: InputFieldProps) => {
 				className={styles["input-field"]}
 				value={todoText}
 				onChange={(e) => setTodoText(e.target.value)}
+				maxLength={36}
 			/>
 			<button type='submit' className={styles["submit-btn"]}>
 				Go

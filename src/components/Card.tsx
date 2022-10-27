@@ -44,6 +44,7 @@ const Card = ({ todo, todos, setTodos }: CardProps) => {
 					value={editTodoText}
 					ref={inputRef}
 					onChange={(e) => setEditTodoText(e.target.value)}
+					maxLength={36}
 				/>
 			) : todo.isDone ? (
 				<s className={styles["todo-text"]}>{todo.todoText}</s>
