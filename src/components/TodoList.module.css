@@ -1,0 +1,31 @@
+.wrapper {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	column-gap: 15px;
+	width: 90%;
+	flex-wrap: wrap;
+	font-family: "Neucha", sans-serif;
+}
+
+@media (max-width: 768px) {
+	.wrapper {
+		display: flex;
+	}
+}
+
+.container {
+	display: flex;
+	gap: 20px;
+	justify-content: space-between;
+}
+
+.heading {
+	font-size: 30px;
+	color: white;
+}
+
+.active,
+.done {
+	background-color: rgb(50, 195, 205);
+	width: 50%;
+}

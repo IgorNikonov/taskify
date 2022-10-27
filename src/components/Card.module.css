@@ -1,0 +1,33 @@
+.wrapper {
+	display: flex;
+	align-items: center;
+	border-radius: 5px;
+	padding: 20px;
+	margin-top: 15px;
+	background-image: url("https://img.freepik.com/free-photo/crumpled-yellow-paper-background-close-up_60487-2390.jpg?size=626&ext=jpg");
+	transition: all 0.2s;
+}
+
+.todo-text {
+	flex: 1;
+	font-size: 20px;
+}
+
+.icon {
+	font-size: 20px;
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+.input-field {
+	flex: 1;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+	.wrapper {
+		width: 95%;
+	}
+}
