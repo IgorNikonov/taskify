@@ -10,25 +10,20 @@ interface TodoListProps {
 
 const TodoList = ({ todos, setTodos }: TodoListProps) => {
 	return (
-		<div className={styles.wrapper}>
-			{todos.map((todo) => (
-				<Card todo={todo} key={todo.id} todos={todos} setTodos={setTodos} />
-			))}
+		<div className={styles.container}>
+			<div className={styles.todos}>
+				<span className={styles.heading}>Active tasks</span>
+				{todos.map((todo) => (
+					<Card todo={todo} todos={todos} setTodos={setTodos} key={todo.id} />
+				))}
+			</div>
+			<div className={`${styles.todos} ${styles.completed}`}>
+				<span className={styles.heading}>Completed tasks</span>
+				{todos.map((todo) => (
+					<Card todo={todo} todos={todos} setTodos={setTodos} key={todo.id} />
+				))}
+			</div>
 		</div>
-		// <div className={styles.container}>
-		// 	<div className={styles.active}>
-		// 		<span className={styles.heading}>Active Todos</span>
-		// 		{todos.map((todo) => (
-		// 			<Card todo={todo} todos={todos} key={todo.id} setTodos={setTodos} />
-		// 		))}
-		// 	</div>
-		// 	<div className={styles.done}>
-		// 		<span className={styles.heading}>Active Todos</span>
-		// 		{todos.map((todo) => (
-		// 			<Card todo={todo} todos={todos} key={todo.id} setTodos={setTodos} />
-		// 		))}
-		// 	</div>
-		// </div>
 	);
 };
 

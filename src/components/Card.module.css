@@ -8,6 +8,11 @@
 	transition: all 0.2s;
 }
 
+.wrapper:hover {
+	scale: 1.02;
+	box-shadow: 0 0 5px black;
+}
+
 .todo-text {
 	flex: 1;
 	font-size: 20px;
@@ -24,10 +29,6 @@
 	border: none;
 	outline: none;
 	border-radius: 5px;
-}
-
-@media (max-width: 768px) {
-	.wrapper {
-		width: 95%;
-	}
+	padding: 7px 10px;
+	font-family: "Neucha", sans-serif;
 }
