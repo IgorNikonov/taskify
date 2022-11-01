@@ -15,20 +15,6 @@ const TodoList = ({ todos, setTodos }: TodoListProps) => {
 				<Card todo={todo} key={todo.id} todos={todos} setTodos={setTodos} />
 			))}
 		</div>
-		// <div className={styles.container}>
-		// 	<div className={styles.active}>
-		// 		<span className={styles.heading}>Active Todos</span>
-		// 		{todos.map((todo) => (
-		// 			<Card todo={todo} todos={todos} key={todo.id} setTodos={setTodos} />
-		// 		))}
-		// 	</div>
-		// 	<div className={styles.done}>
-		// 		<span className={styles.heading}>Active Todos</span>
-		// 		{todos.map((todo) => (
-		// 			<Card todo={todo} todos={todos} key={todo.id} setTodos={setTodos} />
-		// 		))}
-		// 	</div>
-		// </div>
 	);
 };
 

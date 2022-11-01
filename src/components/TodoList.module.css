@@ -5,18 +5,13 @@
 	width: 90%;
 	flex-wrap: wrap;
 	font-family: "Neucha", sans-serif;
+	margin-top: 5px;
 }
 
 @media (max-width: 768px) {
 	.wrapper {
 		display: flex;
 	}
-}
-
-.container {
-	display: flex;
-	gap: 20px;
-	justify-content: space-between;
 }
 
 .heading {
