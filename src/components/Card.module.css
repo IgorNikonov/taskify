@@ -13,6 +13,10 @@
 	box-shadow: 0 0 5px black;
 }
 
+.dragging {
+	box-shadow: 0 0 15px black;
+}
+
 .todo-text {
 	flex: 1;
 	font-size: 20px;

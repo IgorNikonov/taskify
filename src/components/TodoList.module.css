@@ -1,16 +1,16 @@
 .container {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
+	align-items: start;
+	justify-content: space-between;
 	gap: 20px;
 	width: 90%;
-	margin-top: 15px;
+	margin: 20px 0;
 	font-family: "Neucha", sans-serif;
 }
 
-@media (max-width: 768px) {
-	.container {
-		grid-template-columns: 1fr;
-	}
+.heading {
+	font-size: 30px;
 }
 
 .todos {
@@ -19,4 +19,35 @@
 	border-radius: 5px;
 	background-color: rgb(50, 195, 200);
 	padding: 15px;
+	width: 90%;
+}
+
+.todos:first-child {
+	justify-self: right;
+}
+
+.todos:last-child {
+	justify-self: left;
+}
+
+.completed {
+	background-color: rgb(235, 103, 80);
+}
+
+.dragactive {
+	background-color: rgb(0, 221, 236);
+}
+
+.dragcompleted {
+	background-color: rgb(235, 68, 35);
+}
+
+@media (max-width: 768px) {
+	.container {
+		grid-template-columns: 1fr;
+	}
+
+	.container .todos {
+		justify-self: center;
+	}
 }
