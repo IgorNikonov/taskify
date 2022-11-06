@@ -8,10 +8,11 @@ interface InputFieldProps {
 }
 
 const InputField = ({ todoText, setTodoText, handleAdd }: InputFieldProps) => {
-	const inputRef = useRef<any>(null);
+	const inputRef = useRef<HTMLInputElement>(null);
 
 	useEffect(() => {
-		inputRef.current.focus();
+		inputRef.current?.focus();
+		console.log("asdlkfj");
 	}, []);
 
 	return (
@@ -19,6 +20,7 @@ const InputField = ({ todoText, setTodoText, handleAdd }: InputFieldProps) => {
 			className={styles.wrapper}
 			onSubmit={(e) => {
 				handleAdd(e);
+				inputRef.current?.focus();
 			}}
 		>
 			<input
