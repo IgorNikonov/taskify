@@ -7,11 +7,12 @@ import { Draggable } from "react-beautiful-dnd";
 interface CardProps {
 	idx: number;
 	todo: Todo;
+	todos: Todo[];
 	setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
 	isDone?: boolean;
 }
 
-const Card = ({ idx, todo, isDone, setTodos }: CardProps) => {
+const Card = ({ idx, todo, todos, isDone, setTodos }: CardProps) => {
 	const [edit, setEdit] = useState<boolean>(false);
 	const [editTodoText, setEditTodoText] = useState<string>(todo.todoText);
 
@@ -21,8 +22,18 @@ const Card = ({ idx, todo, isDone, setTodos }: CardProps) => {
 		inputRef.current?.focus();
 	}, [edit]);
 
-	const handleDelete = (id: number) =>
+	useEffect(() => {
+		isDone
+			? localStorage.setItem("completed", JSON.stringify(todos))
+			: localStorage.setItem("active", JSON.stringify(todos));
+		console.log(todos);
+		// @ts-ignore
+		if (!todos.length) localStorage.removeItem("completed");
+	}, [todos, localStorage.getItem("completed")]);
+
+	const handleDelete = (id: number) => {
 		setTodos((prev) => prev.filter((el) => el.id !== id));
+	};
 
 	const handleEdit = (e: React.FormEvent, id: number) => {
 		e.preventDefault();

@@ -47,6 +47,8 @@ const TodoList = ({
 
 		setCompletedTodos(completed);
 		setTodos(active);
+		localStorage.setItem("active", JSON.stringify(todos));
+		localStorage.setItem("completed", JSON.stringify(completedTodos));
 	};
 
 	return (
@@ -63,7 +65,13 @@ const TodoList = ({
 						>
 							<span className={styles.heading}>Active tasks</span>
 							{todos.map((todo, idx) => (
-								<Card idx={idx} todo={todo} setTodos={setTodos} key={todo.id} />
+								<Card
+									idx={idx}
+									todo={todo}
+									todos={todos}
+									setTodos={setTodos}
+									key={todo.id}
+								/>
 							))}
 							{provided.placeholder}
 						</div>
@@ -85,6 +93,7 @@ const TodoList = ({
 								<Card
 									idx={idx}
 									todo={todo}
+									todos={completedTodos}
 									setTodos={setCompletedTodos}
 									isDone
 									key={todo.id}
