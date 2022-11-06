@@ -12,7 +12,6 @@ const InputField = ({ todoText, setTodoText, handleAdd }: InputFieldProps) => {
 
 	useEffect(() => {
 		inputRef.current?.focus();
-		console.log("asdlkfj");
 	}, []);
 
 	return (
@@ -20,7 +19,7 @@ const InputField = ({ todoText, setTodoText, handleAdd }: InputFieldProps) => {
 			className={styles.wrapper}
 			onSubmit={(e) => {
 				handleAdd(e);
-				inputRef.current?.focus();
+				window.innerWidth < 768 && inputRef.current?.blur();
 			}}
 		>
 			<input
